@@ -88,7 +88,7 @@ def run_with_cgi(application):
             if data:    # don't send headers until body appears
                 write(data)
         if not headers_sent:
-            write('')   # send headers now if body was empty
+            write(b'')   # send headers now if body was empty
     finally:
         if hasattr(result,'close'):
             result.close()
